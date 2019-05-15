@@ -43,6 +43,10 @@ fetch(breedUrl)
         Object.keys(data.message).filter(word => word.startsWith(`${filter}`)).forEach(function(breed){
             let li = document.createElement('li')
             li.innerText = breed
+            li.addEventListener('click', function(event){
+                event.preventDefault  
+                li.style.color = '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)
+            })
                 // debugger
             ul.append(li)
         })
